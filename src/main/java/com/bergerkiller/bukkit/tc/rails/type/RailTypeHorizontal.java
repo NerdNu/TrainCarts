@@ -89,39 +89,43 @@ public abstract class RailTypeHorizontal extends RailType {
         }
 
         if (member.isOnSlope()) {
-            // Cancel collisions with blocks two above this sloped rail
-            if (hitBlock.getX() == posBlock.getX() && hitBlock.getZ() == posBlock.getZ()) {
-                int dy = hitBlock.getY() - posBlock.getY();
-                if (dy >= 2) {
-                    return false;
-                }
-            }
-
-            // Cancel collisions with blocks at the heading of sloped rails when going up vertically
-            BlockFace railDirection = this.getDirection(railsBlock);
-            if (hitToFace == railDirection) {
-                // Going up a vertical rail? Check here.
-                if (Util.isVerticalAbove(posBlock, railDirection)) {
-                    return false;
-                }
-                // If on the same level as the minecart, ignore. (going up a slope should not hit the slope)
-                // If there is also a solid block above the block, then allow this collision to occur
-                if (posBlock.getY() == hitBlock.getY()) {
-                    Block above = hitBlock.getRelative(BlockFace.UP);
-                    if (!MaterialUtil.ISSOLID.get(above)) {
-                        return false;
-                    }
-                }
-            }
-
-            // Cancel collisions with blocks 'right above' the next rail when going down the slope
-            if (!TrainCarts.enableCeilingBlockCollision) {
-                IntVector3 diff = new IntVector3(hitBlock).subtract(posBlock.getX(), posBlock.getY(), posBlock.getZ());
-                if (diff.x == hitToFace.getModX() && diff.z == hitToFace.getModZ() &&
-                        (diff.y > 1 || (diff.y == 1 && railDirection != hitToFace))) {
-                    return false;
-                }
-            }
+            // Cancel all block collisions while on a slope
+            return false;
+/*
+*            // Cancel collisions with blocks two above this sloped rail
+*            if (hitBlock.getX() == posBlock.getX() && hitBlock.getZ() == posBlock.getZ()) {
+*                int dy = hitBlock.getY() - posBlock.getY();
+*                if (dy >= 2) {
+*                    return false;
+*                }
+*            }
+*
+*            // Cancel collisions with blocks at the heading of sloped rails when going up vertically
+*            BlockFace railDirection = this.getDirection(railsBlock);
+*            if (hitToFace == railDirection) {
+*                // Going up a vertical rail? Check here.
+*                if (Util.isVerticalAbove(posBlock, railDirection)) {
+*                    return false;
+*                }
+*                // If on the same level as the minecart, ignore. (going up a slope should not hit the slope)
+*                // If there is also a solid block above the block, then allow this collision to occur
+*                if (posBlock.getY() == hitBlock.getY()) {
+*                    Block above = hitBlock.getRelative(BlockFace.UP);
+*                    if (!MaterialUtil.ISSOLID.get(above)) {
+*                        return false;
+*                    }
+*                }
+*            }
+*
+*            // Cancel collisions with blocks 'right above' the next rail when going down the slope
+*            if (!TrainCarts.enableCeilingBlockCollision) {
+*                IntVector3 diff = new IntVector3(hitBlock).subtract(posBlock.getX(), posBlock.getY(), posBlock.getZ());
+*                if (diff.x == hitToFace.getModX() && diff.z == hitToFace.getModZ() &&
+*                        (diff.y > 1 || (diff.y == 1 && railDirection != hitToFace))) {
+*                    return false;
+*                }
+*            }
+*/
         }
 
         return true;
