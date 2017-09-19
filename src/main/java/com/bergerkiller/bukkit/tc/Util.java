@@ -36,7 +36,7 @@ import java.util.Locale;
 
 public class Util {
     public static final MaterialTypeProperty ISVERTRAIL = new MaterialTypeProperty(Material.LADDER);
-    public static final MaterialTypeProperty ISTCRAIL = new MaterialTypeProperty(ISVERTRAIL, MaterialUtil.ISRAILS, MaterialUtil.ISPRESSUREPLATE);
+    public static final MaterialTypeProperty ISTCRAIL = new MaterialTypeProperty(ISVERTRAIL, MaterialUtil.ISRAILS, MaterialUtil.ISMETALPRESSUREPLATE);
     private static final String SEPARATOR_REGEX = "[|/\\\\]";
     private static BlockFace[] possibleFaces = {BlockFace.UP, BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST, BlockFace.DOWN};
     private static List<Block> blockbuff = new ArrayList<Block>();

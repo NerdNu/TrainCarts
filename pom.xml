@@ -2,18 +2,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.bergerkiller.bukkit</groupId>
+    <groupId>nu.nerd</groupId>
     <artifactId>TrainCarts</artifactId>
-    <version>1.12.1-v3-SNAPSHOT</version>
+    <version>1.12.1-v3-0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>TrainCarts</name>
-    <url>https://github.com/bergerhealer/traincarts/</url>
+    <url>https://github.com/nerdnu/traincarts/</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.serverversion>1.12-R0.1</project.serverversion>
-        <project.bkcversion>1.12.1-v2</project.bkcversion>
+        <project.bkcversion>1.12.1-v4-0-SNAPSHOT</project.bkcversion>
         <project.slversion>1.11.2-v2-SNAPSHOT</project.slversion>
         <project.mwversion>1.11.2-v2-SNAPSHOT</project.mwversion>
         <project.cibuild/>
@@ -106,7 +106,7 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>com.bergerkiller.bukkit</groupId>
+            <groupId>nu.nerd</groupId>
             <artifactId>BKCommonLib</artifactId>
             <version>${project.bkcversion}</version>
             <scope>provided</scope>
@@ -174,7 +174,7 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>com.bergerkiller.bukkit</groupId>
+                                    <groupId>nu.nerd</groupId>
                                     <artifactId>TrainCarts</artifactId>
                                     <version>${project.version}</version>
                                     <type>jar</type>

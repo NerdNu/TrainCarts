@@ -580,7 +580,7 @@ public class TCListener implements Listener {
         /*
         
         // Place logic for special rail types
-        if (MaterialUtil.ISPRESSUREPLATE.get(railType)) {
+        if (MaterialUtil.ISMETALPRESSUREPLATE.get(railType)) {
         } else if (Util.ISVERTRAIL.get(railType)) {
         } else {
             // Set ownership and convert during the upcoming minecart spawning (entity add) event

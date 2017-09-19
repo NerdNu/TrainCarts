@@ -17,7 +17,7 @@ public class RailTypeCrossing extends RailTypeHorizontal {
 
     @Override
     public boolean isRail(BlockData blockData) {
-        return MaterialUtil.ISPRESSUREPLATE.get(blockData);
+        return MaterialUtil.ISMETALPRESSUREPLATE.get(blockData);
     }
 
     @Override
