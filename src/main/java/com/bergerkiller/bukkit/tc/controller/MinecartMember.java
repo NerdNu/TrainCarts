@@ -1041,7 +1041,11 @@ public abstract class MinecartMember<T extends CommonMinecart<?>> extends Entity
                 Vector vel = passenger.getVelocity();
                 vel.setY(0.0);
                 if (vel.lengthSquared() > 1.0E-4 && entity.vel.xz.lengthSquared() < 0.01) {
-                    entity.vel.xz.add(vel.multiply(0.9));
+                    if (vel.lengthSquared() < 0.0009) {
+                        entity.vel.xz.add(vel.multiply(2));
+                    } else {
+                        entity.vel.xz.add(vel.multiply(0.9));
+                    }
                 }
             }
         }
